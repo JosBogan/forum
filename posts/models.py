@@ -8,7 +8,7 @@ User = get_user_model()
 class Post(models.Model):
     title = models.CharField(max_length=20)
     text = models.CharField(max_length=2000)
-    user = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE, blank=True, null=True)
     upvotes = models.IntegerField(default=0)
     views = models.IntegerField(default=1)
     room = models.ForeignKey('rooms.Room', related_name='posts', on_delete=models.CASCADE)

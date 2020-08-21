@@ -24,9 +24,8 @@ class RoomListView(APIView):
 
     def post(self, request):
         new_room = RoomSerializer(data=request.data)
-        if new_room.is_valid:
+        if new_room.is_valid():
             new_room.save()
             return Response(new_room.data, status=HTTP_201_CREATED)
         else:
             return Response(new_room.errors, status=HTTP_422_UNPROCESSABLE_ENTITY)
-            

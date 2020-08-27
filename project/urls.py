@@ -20,5 +20,5 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rooms/', include('rooms.urls')),
-    path('admin/', include('jwt_auth.urls')),
+    path('auth/', include('jwt_auth.urls')),
 ]

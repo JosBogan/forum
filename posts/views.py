@@ -7,6 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_422_UNPROCESSABLE_ENTITY, HTTP_401_UNAUTHORIZED, HTTP_202_ACCEPTED, HTTP_404_NOT_FOUND, HTTP_204_NO_CONTENT
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 # Models
 from .models import Post
 from rooms.models import Room
@@ -18,8 +20,11 @@ from .serializers import PostSerializer, RoomSerializer
 
 class PostListView(APIView):
 
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+
     def post(self, request, pk):
         request.data['room'] = pk
+        request.data['user'] = request.user.id
         new_post = PostSerializer(data=request.data)
         if new_post.is_valid():
             new_post.save()

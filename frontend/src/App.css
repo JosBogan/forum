@@ -1,14 +1,32 @@
-.App {
+.app {
   text-align: center;
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0px 20px;
   color: white;
+  height: 80px;
+}
+.navbar_auth {
+  display: flex;
+}
+
+.navbar_item {
+  margin: 0px 10px;
+  padding: 10px 10px
+}
+
+.navbar_right {
+  justify-self: flex-end;
+}
+
+.navbar_auth_item:hover {
+  background:  white;
+  color: #282c34;
+  border-radius: 15px;
 }

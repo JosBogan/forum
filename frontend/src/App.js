@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios'
 
+import Navbar from './components/Navbar'
+
 import { headers } from './lib/headers'
 
 function App() {
@@ -15,8 +17,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app_header">
+        <Navbar />
       </header>
     </div>
   );

@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import Navbar from './components/Navbar'
+import axios from 'axios'
+
+import { headers } from './lib/headers'
 
 function App() {
-  return (
 
+  useEffect(() => {
+    async function getData() {
+      const res = await axios.get('http://localhost:8000/rooms/', headers)
+      console.log(res)
+    }
+    getData()
+  }, [])
+
+  return (
     <div className="App">
       <header className="App-header">
-        <Navbar />
       </header>
     </div>
   );

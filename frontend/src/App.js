@@ -9,6 +9,7 @@ import './App.css';
 // Components
 import Navbar from './components/Navbar'
 import Rooms from './components/Rooms'
+import Room from './components/Room'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/rooms" component={Rooms}/>
+            <Route path="/:room_name" component={Room}/>
           </Switch>
         </header>
       </div>

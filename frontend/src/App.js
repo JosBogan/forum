@@ -1,27 +1,28 @@
+// Libraries
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import axios from 'axios'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
+// Styles
+import './App.css';
+
+// Components
 import Navbar from './components/Navbar'
-
-import { headers } from './lib/headers'
+import Rooms from './components/Rooms'
 
 function App() {
 
-  useEffect(() => {
-    async function getData() {
-      const res = await axios.get('http://localhost:8000/rooms/', headers)
-      console.log(res)
-    }
-    getData()
-  }, [])
-
   return (
-    <div className="app">
-      <header className="app_header">
-        <Navbar />
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <header className="app_header">
+          <Navbar />
+          <Switch>
+            <Route path="/rooms" component={Rooms}/>
+          </Switch>
+        </header>
+      </div>
+    </BrowserRouter>
   );
 }
 

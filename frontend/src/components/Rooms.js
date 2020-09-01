@@ -1,6 +1,7 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 // Components
 
@@ -21,7 +22,10 @@ function Rooms() {
 
   return (
     <div>
-      {rooms.map(item => <div key={rooms.name}>{item.name}</div>)}
+      {rooms.map(item => (
+        <Link key={rooms.name} to={`/${item.id}`}>{item.name}</Link>
+        )
+      )}
     </div>
   )
 }

@@ -5,6 +5,8 @@
   color: white;
 }
 
+/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,4 +31,31 @@
   background:  white;
   color: #282c34;
   border-radius: 10px;
+}
+
+/* Posts */
+
+.posts_container {
+
+}
+
+.post {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff2d;
+  margin: 20px 0px;
+}
+
+.post_stats_container {
+  display: flex;
+  align-self: flex-end;
+  border-left: 2px solid #ffffff63;
+  border-top: 2px solid #ffffff63;
+  /* border-radius: 10px; */
+}
+
+.post_stat {
+  padding: 10px;
 }

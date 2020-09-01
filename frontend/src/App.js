@@ -10,6 +10,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import Rooms from './components/Rooms'
 import Room from './components/Room'
+import Login from './components/auth/Login'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/rooms" component={Rooms}/>
+            <Route path="/login" component={Login}/>
             <Route path="/:room_name" component={Room}/>
           </Switch>
         </header>

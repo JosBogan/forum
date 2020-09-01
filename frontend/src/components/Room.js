@@ -36,6 +36,7 @@ function Room(props) {
   return (
     <div>
       {console.log(posts)}
+      <h1>{}</h1>
       <div className="posts_container">
         {posts.map(item => (
           <div className="post">

@@ -46,16 +46,59 @@
   justify-content: space-between;
   background-color: #ffffff2d;
   margin: 20px 0px;
+  padding: 0px 40px
 }
 
 .post_stats_container {
   display: flex;
   align-self: flex-end;
-  border-left: 2px solid #ffffff63;
-  border-top: 2px solid #ffffff63;
+  border-radius: 5px 5px 0 0;
+  background-color: #282c34;
   /* border-radius: 10px; */
+}
+
+.post:hover {
+  background-color: #ffffff54;
 }
 
 .post_stat {
   padding: 10px;
+}
+
+/* Auth */
+
+.auth_form_container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.auth_form_input_container {
+  margin: 20px 0;
+}
+
+.auth_text_input {
+  padding: 10px 15px;
+  width: 50%;
+  border: 0px;
+  background-color: #282c34;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+}
+
+.auth_text_input:focus {
+  border-color: rgb(71, 187, 133);
+}
+
+.auth_form {
+  padding: 20px 0px;
+  width: 50%;
+  background-color: #ffffff2d;
+  border-radius: 10px;
+}
+
+.auth_input_label {
+
 }

@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 // Lib
-
 import { headers } from '../../lib/headers'
+import Auth from '../../lib/auth'
 
 function Login() {
 
@@ -24,6 +24,7 @@ function Login() {
     try {
       const res = await axios.post('http://localhost:8000/auth/login/',
         {...data}, headers)
+      Auth.setToken(res.data.token)
       console.log(res.data)
     } catch (err) {
       console.log(err)

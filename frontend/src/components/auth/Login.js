@@ -1,5 +1,11 @@
+
+// Libraries
 import React, { useEffect, useState } from 'react'
-import { set } from 'js-cookie'
+import axios from 'axios'
+
+// Lib
+
+import { headers } from '../../lib/headers'
 
 function Login() {
 
@@ -12,9 +18,16 @@ function Login() {
     setData({...data, [event.target.name]: event.target.value })
   }
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault()
     console.log(data)
+    try {
+      const res = await axios.post('http://localhost:8000/auth/login/',
+        {...data}, headers)
+      console.log(res.data)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -23,6 +36,7 @@ function Login() {
         className="auth_form"
         onSubmit={onSubmit}
       >
+        <h1>Login</h1>
         <div className="input_container">
           <div className="auth_form_input_container">
           <label className="auth_input_label" for="email">Email</label>
@@ -47,7 +61,7 @@ function Login() {
           ></input>
         </div>
         <div className="auth_form_input_container">
-          <button type="submit" className="" >Login</button>          
+          <button type="submit" className="submit_button" >Login</button>          
         </div>
       </form>
     </div>

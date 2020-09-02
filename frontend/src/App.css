@@ -68,18 +68,19 @@
 /* Auth */
 
 .auth_form_container {
-  margin-top: 20px;
+  margin: 20px 0px;
   display: flex;
   justify-content: center;
 }
 
 .auth_form_input_container {
   margin: 20px 0;
+  text-align: left;
 }
 
 .auth_text_input {
   padding: 10px 15px;
-  width: 50%;
+  width: 100%;
   border: 0px;
   background-color: #282c34;
   border: 2px solid white;
@@ -93,12 +94,22 @@
 }
 
 .auth_form {
-  padding: 20px 0px;
+  padding: 20px 150px;
   width: 50%;
   background-color: #ffffff2d;
   border-radius: 10px;
 }
 
-.auth_input_label {
+.submit_button {
+  width: 40%;
+  font-size: 1.2em;
+  border: 0px;
+  outline: none;
+}
 
+.submit_button:hover {
+  
+}
+
+.auth_input_label {
 }

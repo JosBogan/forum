@@ -7,7 +7,7 @@ import axios from 'axios'
 import { headers } from '../../lib/headers'
 import Auth from '../../lib/auth'
 
-function Login() {
+function Login(props) {
 
   const [data, setData] = useState({
     email: "",
@@ -25,7 +25,7 @@ function Login() {
       const res = await axios.post('http://localhost:8000/auth/login/',
         {...data}, headers)
       Auth.setToken(res.data.token)
-      console.log(res.data)
+      props.history.push('/')
     } catch (err) {
       console.log(err)
     }
@@ -40,7 +40,7 @@ function Login() {
         <h1>Login</h1>
         <div className="input_container">
           <div className="auth_form_input_container">
-          <label className="auth_input_label" for="email">Email</label>
+          <label className="auth_input_label" htmlFor="email">Email</label>
           </div>
           <input 
             id="email" 
@@ -51,7 +51,7 @@ function Login() {
         </div>
         <div className="input_container">
           <div className="auth_form_input_container">
-          <label className="auth_input_label" for="for">Password</label>
+          <label className="auth_input_label" htmlFor="for">Password</label>
           </div>
           <input 
             id="password" 

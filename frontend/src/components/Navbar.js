@@ -8,7 +8,7 @@ function Navbar() {
       <div className="navbar_item navbar_right navbar_auth">
         <Link to="/rooms" className="navbar_item navbar_auth_item">Rooms</Link>
         <Link to="/login" className="navbar_item navbar_auth_item">Login</Link>
-        <Link to="/" className="navbar_item navbar_auth_item">Register</Link>
+        <Link to="/register" className="navbar_item navbar_auth_item">Register</Link>
       </div>
     </nav>
   )

@@ -11,6 +11,7 @@ import Navbar from './components/Navbar'
 import Rooms from './components/Rooms'
 import Room from './components/Room'
 import Login from './components/auth/Login'
+import Register from './components/auth/Register'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Switch>
             <Route path="/rooms" component={Rooms}/>
             <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
             <Route path="/:room_name" component={Room}/>
           </Switch>
         </header>
